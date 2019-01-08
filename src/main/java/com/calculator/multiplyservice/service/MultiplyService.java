@@ -3,6 +3,7 @@ package com.calculator.multiplyservice.service;
 import com.calculator.multiplyservice.model.request.OperationRequest;
 import com.calculator.multiplyservice.model.response.OperationResultResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -24,6 +25,7 @@ public class MultiplyService {
     private BigDecimal multiply(BigDecimal first, BigDecimal second) {
         return first.multiply(second);
     }
+
 
     public Double getCreditCost() {
         return propertyProviderService.getCreditCost();
